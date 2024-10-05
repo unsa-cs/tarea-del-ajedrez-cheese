@@ -4,16 +4,11 @@
 
 #include "chess.h"
 #include "figures.h"
-/*
-void display(){
-  char** square = reverse(whiteSquare);
-  interpreter(square);
-}*/
+
 void display(){
   char** wSquare = whiteSquare;
   char** bSquare = reverse(whiteSquare);
   char** jSquare = repeatH(join(wSquare, bSquare),4);
 
   interpreter(jSquare);
-
 }

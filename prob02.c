@@ -4,6 +4,6 @@
 void display(){
   char** wSquare = whiteSquare;
   char** bSquare = reverse(whiteSquare);
-  char** jinvertidoSquare = join(bSquare, wSquare);
+  char** jinvertidoSquare = repeatH(join(bSquare, wSquare),4);
   interpreter(jinvertidoSquare);
 }
