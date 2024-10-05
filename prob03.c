@@ -7,7 +7,8 @@ void display(){
   char** bSquare = reverse(whiteSquare);
   char** horizontalSquare = repeatH(join(bSquare, wSquare),4);
   char** reversoHorizontalSquare = reverse(horizontalSquare);  
-  char** horizontalUp = up(horizontalSquare,reversoHorizontalSquare);  
-  interpreter(horizontalUp);
+  char** horizontalUp = up(horizontalSquare,reversoHorizontalSquare);
+  char** espejoInvertido = up(reverse(flipV(horizontalUp)),horizontalUp);
+  interpreter(espejoInvertido);
 }
 
