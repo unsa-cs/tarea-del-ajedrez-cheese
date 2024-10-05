@@ -5,8 +5,12 @@
 void display(){
   char** wSquare = whiteSquare;
   char** bSquare = reverse(whiteSquare);
-  char** jSquare = repeatH(join(wSquare, bSquare),4);
-  char** vSquare = repeatV(jSquare,4);
-  interpreter(vSquare);
+  char** horizontalSquare = repeatH(join(bSquare, wSquare),4);
+  char** reversoHorizontalSquare = reverse(horizontalSquare);
+  char** verticalSquare = repeatV(join(bSquare,wSquare),4);
+  char** reversoVerticalSquare = reverse(verticalSquare);
+  char** unirprueba = flipH(reversoHorizontalSquare);
+  char** unir = join(horizontalSquare,reversoHorizontalSquare);
+  interpreter(verticalSquare);
 }
 
