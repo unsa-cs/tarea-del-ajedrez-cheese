@@ -5,13 +5,20 @@
 void display(){ 
   char** wSquare = whiteSquare;
   char** bSquare = reverse(whiteSquare);
-  char** jSquare = join(bSquare,wSquare);/*hemos hecho la funcion de join para poder poner una a lado de otra */
-  char** rSquare = repeatH(jSquare,4);/*hemos repetido cuatro veces la funcion join y alcanzamos el resultado */
+  
+  char** jSquare = join(bSquare,wSquare);
+  char** rSquare = repeatH(jSquare,2);
   char** jrSquare = reverse(rSquare);
-  char** rrSquare = up(jSquare,rSquare);  
-  char** VSquare = repeatV(rrSquare,2);
-  interpreter(jrSquare);
- /* free(bSquare);
+  char** rrSquare = up(jSquare,wSquare);  
+  //char** VSquare = repeatV(rrSquare,2);
+/*
+  char** hSquare=join(bSquare, wSquare);
+  char** horizontalSquare = repeatH(hSquare,4);
+  char** reversoHorizontalSquare = reverse(horizontalSquare);  
+  char** horizontalUp = up(horizontalSquare,reversoHorizontalSquare);*/  
+  interpreter(rrSquare);
+
+  /* free(bSquare);
   free(jSquare);
   free(rSquare);
   free(jrSquare);
