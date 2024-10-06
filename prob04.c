@@ -13,13 +13,23 @@ void display(){
   char** union3 = join(union2,queen);
   char** union4 = join(union3,king);
 
-  char** union5 = flipV(union2);
-  char** union6 = join(union4,union5);
-  char** sobrePoner = superImpose(union6,rSquare);
+  char** union5 = join(union4,bishop);
+  char** union6 = join(union5,knight);
+  char** union7 = join(union6,rook);
+  char** sobrePoner = superImpose(union7,rSquare);
 
   interpreter(sobrePoner);
   free(bSquare);
   free(jSquare);
   free(rSquare);
+  free(union1);
+  free(union2);
+  free(union3);
+  free(union4);
+  free(union5);
+  free(union6);
+  free(union7);
+  free(sobrePoner);
+
 }
 
