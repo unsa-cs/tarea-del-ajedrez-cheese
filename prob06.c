@@ -20,7 +20,9 @@ void display(){
   char** union5 = join(union4,bishop);
   char** union6 = join(union5,knight);
   char** union7 = join(union6,rook);
-  char** sobrePoner = superImpose(union7,VSquare);
+  char** peones = repeatH(pawn,8);
+  char** union8 = up(union7,peones);
+  char** sobrePoner = superImpose(union8,VSquare);
 
   interpreter(sobrePoner);
   free(bSquare);
@@ -33,6 +35,8 @@ void display(){
   free(union5);
   free(union6);
   free(union7);
+  free(peones);
+  free(union8);
   free(sobrePoner);
 
   free(jrSquare);
