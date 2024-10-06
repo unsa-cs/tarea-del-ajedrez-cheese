@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 void display(){
-  char** blackKing = join(join(queen,king),whiteSquare);
+  char** blackKing = up(king,whiteSquare);
   
   interpreter(blackKing);
   free(blackKing);
