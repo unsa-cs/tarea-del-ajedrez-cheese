@@ -24,7 +24,11 @@ void display(){
   char** peones = repeatH(pawn,8);
   char** union8 = up(union7,peones);
   char** union9 = up(union8,FSquare);
-  char** sobrePoner = superImpose(union9,VSquare);
+  char** reversaUnion7 = reverse(union7);
+  char** reversaPeones = reverse(peones);
+  char** union10 = up(reversaPeones,reversaUnion7);
+  char** union11 = up(union9,union10);
+  char** sobrePoner = superImpose(union11,VSquare);
 
 
   interpreter(sobrePoner);
