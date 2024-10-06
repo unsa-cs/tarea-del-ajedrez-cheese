@@ -1,14 +1,22 @@
 #include "chess.h"
 #include "figures.h"
+#include <cstdlib>
 
-
-void display(){
+void display(){ 
   char** wSquare = whiteSquare;
   char** bSquare = reverse(whiteSquare);
-  char** horizontalSquare = repeatH(join(bSquare, wSquare),4);
-  char** reversoHorizontalSquare = reverse(horizontalSquare);  
-  char** horizontalUp = up(horizontalSquare,reversoHorizontalSquare);
-  char** espejoInvertido = up(reverse(flipV(horizontalUp)),horizontalUp);
-  interpreter(espejoInvertido);
+  char** jSquare = join(bSquare,wSquare);/*hemos hecho la funcion de join para poder poner una a lado de otra */
+  char** rSquare = repeatH(jSquare,4);/*hemos repetido cuatro veces la funcion join y alcanzamos el resultado */
+  char** jrSquare = reverse(rSquare);
+  char** rrSquare = up(jSquare,rSquare);  
+  char** VSquare = repeatV(rrSquare,2);
+  interpreter(jrSquare);
+ /* free(bSquare);
+  free(jSquare);
+  free(rSquare);
+  free(jrSquare);
+  free(rrSquare);
+  */
 }
+
 
