@@ -1,15 +1,25 @@
 #include "chess.h"
 #include "figures.h"
+#include <stdlib.h>
 
 void display(){
   char** wSquare = whiteSquare;
   char** bSquare = reverse(whiteSquare);
-  char** horizontalSquare = repeatH(join(bSquare, wSquare),4);
-  char** torre = superImpose(rook,bSquare);
-  char** caballo =superImpose(knight,wSquare);
-  char** alfil = superImpose(bishop,bSquare);
-  char** reina = superImpose(queen,wSquare);
-  char** rey =superImpose(king,bSquare);
-  char** unirpiezas = join(join(join(join(torre,caballo),join(alfil,reina)),join(rey,alfil)),join(caballo,torre));
-  interpreter(unirpiezas);
+  char** jSquare = join(bSquare,wSquare);
+  char** rSquare = repeatH(jSquare,4);
+
+  char** union1 = join(rook,knight);
+  char** union2 = join(union1,bishop);
+  char** union3 = join(union2,queen);
+  char** union4 = join(union3,king);
+
+  char** union5 = flipV(union2);
+  char** union6 = join(union4,union5);
+  char** sobrePoner = superImpose(union6,rSquare);
+
+  interpreter(sobrePoner);
+  free(bSquare);
+  free(jSquare);
+  free(rSquare);
 }
+
