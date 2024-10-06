@@ -10,6 +10,7 @@ void display(){
   char** rSquare = repeatH(jSquare,4);
   char** jrSquare = reverse(rSquare);
   char** rrSquare = up(rSquare,jrSquare);
+  char** FSquare = repeatV(rrSquare,2);
   char** VSquare = repeatV(rrSquare,4);
   
   char** union1 = join(rook,knight);
@@ -22,8 +23,7 @@ void display(){
   char** union7 = join(union6,rook);
   char** peones = repeatH(pawn,8);
   char** union8 = up(union7,peones);
-  char** vacios = repeatV(rSquare,4);
-  char** union9 = up(union8,vacios);
+  char** union9 = up(union8,FSquare);
   char** sobrePoner = superImpose(union9,VSquare);
 
 
@@ -40,7 +40,6 @@ void display(){
   free(union7);
   free(peones);
   free(union8);
-  free(vacios);
   free(union9);
   free(sobrePoner);
 
