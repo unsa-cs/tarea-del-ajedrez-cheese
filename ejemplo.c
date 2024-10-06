@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 void display(){
-  char** blackKing = superImpose(queen,king);
+  char** blackKing = join(queen,king);
   
   interpreter(blackKing);
   free(blackKing);
