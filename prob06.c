@@ -31,7 +31,7 @@ void display(){
   char** sobrePoner = superImpose(union11,VSquare);
 
 
-  interpreter(sobrePoner);
+  interpreter(union11);
   free(bSquare);
   free(jSquare);
   free(rSquare);
@@ -45,6 +45,10 @@ void display(){
   free(peones);
   free(union8);
   free(union9);
+  free(reversaUnion7);
+  free(reversaPeones);
+  free(union10);
+  free(union11);
   free(sobrePoner);
 
   free(jrSquare);
