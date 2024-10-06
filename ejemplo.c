@@ -3,7 +3,8 @@
 #include <stdlib.h>
 
 void display(){
-  char** blackKing = reverse(king);
+  char** blackKing = superImpose(queen,king);
+  
   interpreter(blackKing);
   free(blackKing);
 }
