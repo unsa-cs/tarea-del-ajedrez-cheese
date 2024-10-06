@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 void display(){
-  char** blackKing = up(king,whiteSquare);
+  char** blackKing = repeatH(king,7);
   
   interpreter(blackKing);
   free(blackKing);
