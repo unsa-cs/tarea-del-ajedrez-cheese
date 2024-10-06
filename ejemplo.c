@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 void display(){
-  char** blackKing = flipH(king);
+  char** blackKing = rotateL(king);
   interpreter(blackKing);
   free(blackKing);
 }
