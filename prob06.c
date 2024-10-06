@@ -22,7 +22,10 @@ void display(){
   char** union7 = join(union6,rook);
   char** peones = repeatH(pawn,8);
   char** union8 = up(union7,peones);
-  char** sobrePoner = superImpose(union8,VSquare);
+  char** vacios = repeatV(rSquare,4);
+  char** union9 = up(union8,vacios);
+  char** sobrePoner = superImpose(union9,VSquare);
+
 
   interpreter(sobrePoner);
   free(bSquare);
@@ -37,6 +40,8 @@ void display(){
   free(union7);
   free(peones);
   free(union8);
+  free(vacios);
+  free(union9);
   free(sobrePoner);
 
   free(jrSquare);
