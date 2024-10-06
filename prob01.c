@@ -4,11 +4,15 @@
 
 #include "chess.h"
 #include "figures.h"
-
+#include <cstdlib>
 void display(){
   char** wSquare = whiteSquare;
   char** bSquare = reverse(whiteSquare);
-  char** jSquare = repeatH(join(wSquare, bSquare),4);
+  char** jSquare = join(wSquare,bSquare);/*hemos hecho la funcion de join para poder poner una a lado de otra */
+  char** rSquare = repeatH(join(wSquare, bSquare),4);/*hemos repetido cuatro veces la funcion join y alcanzamos el resultado */
 
-  interpreter(jSquare);
+  interpreter(rSquare);
+  free(bSquare);
+  free(jSquare);
+  free(rSquare);
 }
