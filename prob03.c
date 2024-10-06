@@ -9,7 +9,7 @@ void display(){
   char** jSquare = join(bSquare,wSquare);
   char** rSquare = repeatH(jSquare,2);
   char** jrSquare = reverse(rSquare);
-  char** rrSquare = up(jSquare,wSquare);  
+  char** rrSquare = up(wSquare,rSquare);  
   //char** VSquare = repeatV(rrSquare,2);
 /*
   char** hSquare=join(bSquare, wSquare);
